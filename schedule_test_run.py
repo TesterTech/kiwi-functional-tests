@@ -11,8 +11,6 @@ if __name__ == "__main__":
     from datetime import datetime
     from pickle import dump
 
-    from osc import conf
-
     from launcher.argparser import SERVER_PARSER
     from launcher.client import NoWaitClient
     from launcher.constants import (
@@ -26,10 +24,6 @@ if __name__ == "__main__":
         KIWI_DISTRO_MATRIX,
     )
     from launcher.image_tests import DistroTest
-
-    # initialize the config datastructures or else the fetch of the published
-    # binaries fails
-    conf.get_config()
 
     parser = ArgumentParser("kiwi-openqa-launcher", parents=[SERVER_PARSER])
     parser.add_argument(
